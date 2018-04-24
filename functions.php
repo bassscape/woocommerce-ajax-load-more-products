@@ -3,8 +3,8 @@
 	//-----------------------------------------------------
 	// [1] Enqueue scripts and add localized parameters
 	//-----------------------------------------------------
-	add_action( 'wp_enqueue_scripts', 'kwp_custom_scripts_enqueue' );
-	function kwp_custom_scripts_enqueue() {
+	add_action( 'wp_enqueue_scripts', 'pp_custom_scripts_enqueue' );
+	function pp_custom_scripts_enqueue() {
 	
 		$theme = wp_get_theme(); // Get the current theme version numbers for bumping scripts to load
 	
@@ -36,9 +36,9 @@
 	//-----------------------------------------------------
 	// [3] Load More Products with AJAX
 	//-----------------------------------------------------
-	add_action('wp_ajax_loadmore', 'kwp_loadmore_ajax_handler'); // wp_ajax_{action}
-	add_action('wp_ajax_nopriv_loadmore', 'kwp_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
-	function kwp_loadmore_ajax_handler(){
+	add_action('wp_ajax_loadmore', 'pp_loadmore_ajax_handler'); // wp_ajax_{action}
+	add_action('wp_ajax_nopriv_loadmore', 'pp_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
+	function pp_loadmore_ajax_handler(){
 	
 		// prepare our arguments for the query
 		$args = json_decode( stripslashes( $_POST['query'] ), true );
